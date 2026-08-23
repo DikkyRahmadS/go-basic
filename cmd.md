@@ -3,6 +3,7 @@
 ## 1. Initial Setup
 
 ### Clone & Configure Environment
+
 ```powershell
 # Copy environment file
 Copy-Item .env.example .env
@@ -12,12 +13,14 @@ Copy-Item .env.example .env
 ```
 
 ### Install Go Dependencies
+
 ```powershell
 go mod tidy
 go mod download
 ```
 
 ### Install Database Migration CLI (`golang-migrate`)
+
 ```powershell
 # Install via Go (with MySQL driver support)
 go install -tags 'mysql' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
@@ -31,11 +34,13 @@ migrate -version
 ## 2. Running Application
 
 ### Start Development Server
+
 ```powershell
 go run cmd/server/main.go
 ```
 
 ### Build Production Binary
+
 ```powershell
 # Windows
 go build -o bin/server.exe cmd/server/main.go
@@ -48,46 +53,54 @@ go build -o bin/server cmd/server/main.go
 
 ## 3. Database Migrations (`golang-migrate`)
 
-> **Note**: Replace `root:root@tcp(localhost:3306)/erp_internal` with your MySQL connection credentials if different.
+> **Note**: Replace `root:root@tcp(localhost:3306)/go-basic` with your MySQL connection credentials if different.
 
 ### Create New Migration File
+
 ```powershell
 migrate create -ext sql -dir migration/mysql -seq <migration_name>
 ```
-*Example:*
+
+_Example:_
+
 ```powershell
 migrate create -ext sql -dir migration/mysql -seq create_users_table
 ```
 
 ### Run Migrations (Up)
+
 ```powershell
 # Apply all pending migrations
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" -verbose up
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" -verbose up
 
 # Apply N specific steps
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" -verbose up 1
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" -verbose up 1
 ```
 
 ### Rollback Migrations (Down)
+
 ```powershell
 # Rollback 1 migration step
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" -verbose down 1
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" -verbose down 1
 
 # Rollback all migrations (CAUTION)
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" -verbose down
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" -verbose down
 ```
 
 ### Check Migration Status / Fix Dirty State
+
 ```powershell
 # Check current migration version
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" version
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" version
 
 # Force migration version (fix dirty database flag after migration failure)
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" force <version_number>
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" force <version_number>
 ```
-*Example to clear dirty state on version 1:*
+
+_Example to clear dirty state on version 1:_
+
 ```powershell
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" force 1
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" force 1
 ```
 
 ---
@@ -95,6 +108,7 @@ migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/e
 ## 4. Testing & Maintenance
 
 ### Run Tests
+
 ```powershell
 # Run all unit and integration tests
 go test -v ./...
@@ -104,6 +118,7 @@ go test -cover ./...
 ```
 
 ### Format Code
+
 ```powershell
 # Format all Go files in workspace
 go fmt ./...

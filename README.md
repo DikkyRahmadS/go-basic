@@ -88,7 +88,7 @@ DB_USER=root
 DB_PASSWORD=root
 DB_HOST=localhost
 DB_PORT=3306
-DB_NAME=erp_internal
+DB_NAME=go-basic
 
 # Database Pool Settings
 DB_IDLE_CONNECTIONS=10
@@ -108,7 +108,7 @@ go mod download
 ### 4. Run Database Migrations
 
 ```bash
-migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/erp_internal" -verbose up
+migrate -path migration/mysql -database "mysql://root:root@tcp(localhost:3306)/go-basic" -verbose up
 ```
 
 ### 5. Run the Application
