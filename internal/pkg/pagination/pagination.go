@@ -3,7 +3,7 @@ package pagination
 import (
 	"gorm.io/gorm"
 
-	"erp-internal/internal/pkg/response"
+	"go-basic/internal/pkg/response"
 )
 
 type PageRequest struct {

@@ -3,9 +3,9 @@ package health
 import (
 	"gorm.io/gorm"
 
-	"erp-internal/internal/modules/health/handler"
-	"erp-internal/internal/modules/health/router"
-	"erp-internal/internal/modules/health/service"
+	"go-basic/internal/modules/health/handler"
+	"go-basic/internal/modules/health/router"
+	"go-basic/internal/modules/health/service"
 )
 
 type Module struct {

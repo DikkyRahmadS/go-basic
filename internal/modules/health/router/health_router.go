@@ -3,7 +3,7 @@ package router
 import (
 	"github.com/gin-gonic/gin"
 
-	"erp-internal/internal/modules/health/handler"
+	"go-basic/internal/modules/health/handler"
 )
 
 type Router struct {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"erp-internal/internal/modules/health/service"
-	"erp-internal/internal/pkg/response"
+	"go-basic/internal/modules/health/service"
+	"go-basic/internal/pkg/response"
 )
 
 type HealthHandler struct {

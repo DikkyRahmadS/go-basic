@@ -5,9 +5,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"erp-internal/internal/modules/user/models"
-	"erp-internal/internal/pkg/database"
-	"erp-internal/internal/pkg/pagination"
+	"go-basic/internal/modules/user/models"
+	"go-basic/internal/pkg/database"
+	"go-basic/internal/pkg/pagination"
 )
 
 type UserRepository interface {

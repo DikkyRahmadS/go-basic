@@ -5,8 +5,8 @@ import (
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
 
-	"erp-internal/internal/modules/health"
-	"erp-internal/internal/modules/user"
+	"go-basic/internal/modules/health"
+	"go-basic/internal/modules/user"
 )
 
 type BootstrapConfig struct {

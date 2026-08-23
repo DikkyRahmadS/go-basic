@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 
-	"erp-internal/internal/pkg/apperror"
+	"go-basic/internal/pkg/apperror"
 )
 
 func ErrorResponse(c *gin.Context, code int, err string, details []ErrorDetails) {

@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"erp-internal/internal/config"
+	"go-basic/internal/config"
 )
 
 func main() {

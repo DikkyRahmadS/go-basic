@@ -9,10 +9,10 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 
-	"erp-internal/internal/modules/user/models"
-	"erp-internal/internal/modules/user/repository"
-	"erp-internal/internal/pkg/apperror"
-	"erp-internal/internal/pkg/database"
+	"go-basic/internal/modules/user/models"
+	"go-basic/internal/modules/user/repository"
+	"go-basic/internal/pkg/apperror"
+	"go-basic/internal/pkg/database"
 )
 
 type UserService interface {

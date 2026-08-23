@@ -4,10 +4,10 @@ import (
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
 
-	"erp-internal/internal/modules/user/handler"
-	"erp-internal/internal/modules/user/repository"
-	"erp-internal/internal/modules/user/router"
-	"erp-internal/internal/modules/user/service"
+	"go-basic/internal/modules/user/handler"
+	"go-basic/internal/modules/user/repository"
+	"go-basic/internal/modules/user/router"
+	"go-basic/internal/modules/user/service"
 )
 
 type Module struct {

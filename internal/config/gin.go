@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"erp-internal/internal/middleware"
+	"go-basic/internal/middleware"
 )
 
 func NewGin() *gin.Engine {

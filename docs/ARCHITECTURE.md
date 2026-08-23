@@ -5,7 +5,7 @@
 This project follows an idiomatic Go **Modular Monolith (Package-by-Feature)** architecture:
 
 ```
-erp-internal-backend/
+go-basic-backend/
 ├── cmd/
 │   └── server/
 │       └── main.go                 # App entry point, bootstrap caller
@@ -89,7 +89,9 @@ Database (MySQL)
 To keep the service layer decoupled from HTTP transport frameworks (Gin), the application uses **Centralized Domain Errors**:
 
 ### 1. Service Layer (`apperror`)
+
 Services return typed domain errors without knowing about HTTP requests or Gin contexts:
+
 ```go
 // Domain conflict (409)
 if existingUser != nil {
@@ -108,6 +110,7 @@ if err != nil {
 ```
 
 Available constructors in `internal/pkg/apperror`:
+
 - `apperror.BadRequest(msg)` (400)
 - `apperror.Unauthorized(msg)` (401)
 - `apperror.Forbidden(msg)` (403)
@@ -116,7 +119,9 @@ Available constructors in `internal/pkg/apperror`:
 - `apperror.Internal(err)` (500)
 
 ### 2. Transport Layer (`response.HandleError`)
+
 Handlers delegate all error responses to `response.HandleError(c, err)`:
+
 ```go
 result, err := h.service.Create(c.Request.Context(), &req)
 if err != nil {
@@ -126,6 +131,7 @@ if err != nil {
 ```
 
 `response.HandleError` automatically:
+
 - Maps `*apperror.AppError` to its HTTP status code and message.
 - Formats `validator.ValidationErrors` to `400 Bad Request` with field-level details.
 - Defaults unknown/internal errors to `500 Internal Server Error` without exposing database internals.

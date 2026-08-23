@@ -20,7 +20,7 @@ A production-ready REST API built with **Go** using a **Modular Monolith** archi
 ## 📁 Project Structure
 
 ```
-erp-internal-backend/
+go-basic-backend/
 ├── cmd/
 │   └── server/
 │       └── main.go                 # Application entry point
@@ -126,6 +126,7 @@ The server will start listening at `http://localhost:8080`.
 The full OpenAPI / Swagger 3.0 specification is available at **[docs/swagger.yml](docs/swagger.yml)**.
 
 ### Available Endpoints:
+
 - `GET /health` & `GET /api/health` — System and database health status
 - `POST /api/users` — Create user
 - `GET /api/users` — Get all users (supports optional search, filter, and pagination)

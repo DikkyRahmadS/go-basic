@@ -5,10 +5,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"erp-internal/internal/modules/user/models"
-	"erp-internal/internal/modules/user/service"
-	"erp-internal/internal/pkg/pagination"
-	"erp-internal/internal/pkg/response"
+	"go-basic/internal/modules/user/models"
+	"go-basic/internal/modules/user/service"
+	"go-basic/internal/pkg/pagination"
+	"go-basic/internal/pkg/response"
 )
 
 type UserHandler struct {

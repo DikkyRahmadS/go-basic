@@ -6,7 +6,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"erp-internal/internal/modules/health/models"
+	"go-basic/internal/modules/health/models"
 )
 
 type HealthService interface {
