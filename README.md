@@ -123,7 +123,9 @@ The server will start listening at `http://localhost:8080`.
 
 ## 📖 API Documentation
 
-The full OpenAPI / Swagger 3.0 specification is available at **[docs/swagger.yml](docs/swagger.yml)**.
+The OpenAPI / Swagger interactive documentation is automatically generated.
+When the server is running, you can access the Swagger UI at:
+**[http://localhost:8080/docs/index.html](http://localhost:8080/docs/index.html)**
 
 ### Available Endpoints:
 

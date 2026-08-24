@@ -19,6 +19,13 @@ func NewHealthHandler(service service.HealthService) *HealthHandler {
 	}
 }
 
+// Check godoc
+// @Summary Check Health
+// @Description Cek status server
+// @Tags Health
+// @Produce json
+// @Success 200 {object} map[string]interface{}
+// @Router /health [get]
 func (h *HealthHandler) Check(c *gin.Context) {
 	result, isHealthy := h.service.Check(c.Request.Context())
 

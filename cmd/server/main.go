@@ -7,6 +7,11 @@ import (
 	"go-basic/internal/config"
 )
 
+// @title Go Modular Monolith API
+// @version 1.0
+// @description This is a sample server for Go Modular Monolith API.
+// @host localhost:8080
+// @BasePath /
 func main() {
 	config.LoadEnv()
 
